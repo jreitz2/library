@@ -78,19 +78,20 @@ function addBookToLibrary () {
             newPages.textContent = `${book.pages}`;
             const newButton = document.createElement('button');
             newButton.textContent = `Read`;
+            newButton.classList.add("is-read");
+            newButton.addEventListener("click", () => {
+                newButton.classList.toggle("read");
+            })
             const closeButton = document.createElement('div');
             closeButton.classList.add("close");
-            closeButton.style.position = "relative";
+            closeButton.style.position = "absolute";
+            closeButton.style.right = "5px";
             closeButton.textContent = `X`;
             //remove book from library/close card
             closeButton.addEventListener("click", () => {
                 myLibrary.splice(myLibrary.indexOf(book),1);
                 removeAllChildNodes(library);
                 addBookToLibrary();
-            })
-            newButton.classList.add("is-read");
-            newButton.addEventListener("click", () => {
-                newButton.classList.toggle("read");
             })
             library.appendChild(newCard);
             newCard.appendChild(closeButton);
