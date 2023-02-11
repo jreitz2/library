@@ -17,11 +17,14 @@
             <form class="new-form" id="the-form">
                 <div class="close">X</div>
                 <label for="title">Title:</label>
-                <input type="text" id="title" name="title">
+                <input type="text" id="title" name="title" minlength="4" required>
+                    <span class="title-error" aria-live="polite"></span>
                 <label for="author">Author:</label>
-                <input type="text" id="author" name="author">
+                <input type="text" id="author" name="author" required>
+                    <span class="author-error" aria-live="polite"></span>
                 <label for="pages">Pages:</label>
                 <input type="number" id="pages" name="pages">
+                    <span class="pages-error" aria-live="polite"></span>
                 <input type="submit" value="Add book" class="form-button">
             </form>
         </div>

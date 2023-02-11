@@ -104,7 +104,21 @@ function addBookToLibrary () {
            
 })}
 addBookToLibrary();
+const author = document.getElementById('author');
+const title = document.getElementById('title');
+const titleError = document.querySelector('.title-error');
 
+title.addEventListener('input', e => {
+    if (title.validity.tooShort) {
+        title.setCustomValidity('Too short!');
+    } else {
+        title.setCustomValidity("");
+    }
+});
 
-
-
+author.addEventListener('input', e => {
+    if (author.validity.valueMissing) {
+        author.setCustomValidity('Someone wrote it!');
+    } else if (title.validity.valid) {
+        author.setCustomValidity(''); 
+    }})

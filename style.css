@@ -100,3 +100,11 @@ input {
     cursor: pointer;
     text-align: center;
 }
+
+input:valid:not(input[type=submit])  {
+    border: 2px solid green;
+}
+
+input:invalid {
+    border:2px solid red;
+}
